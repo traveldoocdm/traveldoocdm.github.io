@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Traveldoo World Cup 2018</title>
+    <title>Traveldoo World Cup Russia 2018</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="7200" />
     <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
     <!--[if IE]><script type="text/javascript" src="./html5Tag-code.js"></script><![endif]-->
     <link rel="stylesheet" type="text/css" href="./worldcup.min.css" />
-    <link rel="icon" href="traveldoo-logo.svg" />
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
 </head>
 <body>
 <header>
@@ -15,14 +16,21 @@
     <img src="./traveldoo-white-transparent.svg" alt="" />
 </header>
 <main>
-    <div id="leader" class="scorecast_leader"></div>
-    <div id="boxscroll" class="scorecast_content">
+    <div class="dv_left">
+        <div id="leader" class="scorecast_leader"></div>
+        <div id="playerTop" class="scorecast_content"></div>
+    </div>
+    <div id="boxscroll" class="scorecast_content scorecast_middle">
         <script src="https://www.scorecast.fr/widget.php?token=yxch5tdg&css=https%3A%2F%2Fwww.scorecast.fr%2Fcss%2Fwidget.css"></script>
         <script src="https://www.scorecast.fr/widget.php?token=vbt54fwk&css=https%3A%2F%2Fwww.scorecast.fr%2Fcss%2Fwidget.css&link=1"></script>
     </div>
-    <div id="looser" class="scorecast_looser"></div>
+    <div class="dv_right">
+        <div id="playerBottom" class="scorecast_content"></div>
+        <div id="looser" class="scorecast_looser"></div>
+    </div>
 </main>
 <footer>
+    <span class="spn_program"></span>
     <a href="https://www.scorecast.fr/index.php?token=vbt54fwk" target="_blank">Registration</a>
 </footer>
 <script src="./jquery-1.10.2.min.js"></script>
