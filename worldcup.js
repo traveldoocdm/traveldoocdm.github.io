@@ -106,68 +106,34 @@ function extractTheLooser() {
     $(".scorecast_looser").html("<table>" + htmlCode + "</table>")
 }
 
+function sectionRanking(section, ranking){
+	section.children("table").children("tbody").children("tr").each(function() {
+		var currentScore;
+		var scoreBox;
+		$(this).children("td").each(function() {
+			if ($(this).hasClass("center")) {
+				scoreBox = $(this);
+			}
+			if ($(this).hasClass("total")) {
+				currentScore = $(this).html()
+			}
+		});
+		
+		if(currentScore != ranking.previousScore){
+			scoreBox.html(ranking.current)
+		} else {
+			scoreBox.html("-")
+		}
+		ranking.current++;
+		ranking.previousScore = currentScore;
+	});
+}
+
 function showRanking() {
-    var numRank = 0;
-	var previousScore;
-	var currentScore;
-	var theBox;
-    $(".scorecast_leader").each(function() {
-        $(this).children("table").children("tbody").children("tr").each(function(i) {
-            $(this).children("td").each(function() {
-				if ($(this).hasClass("center")) {
-					theBox = $(this);
-				}
-				if ($(this).hasClass("total")) {
-					currentScore = $(this).html()
-					numRank++;
-				}
-            })
-			if(currentScore != previousScore){
-				theBox.html(numRank)
-			} else {
-				theBox.html("-")
-			}
-			previousScore = currentScore;
-        })
-    });
-    $(".scorecast_widget").each(function() {
-        $(this).children("table").children("tbody").children("tr").each(function() {
-            $(this).children("td").each(function() {
-				if ($(this).hasClass("center")) {
-					theBox = $(this);
-				}
-				if ($(this).hasClass("total")) {
-					currentScore = $(this).html()
-					numRank++;
-				}
-            })
-			if(currentScore != previousScore){
-				theBox.html(numRank)
-			} else {
-				theBox.html("-")
-			}
-			previousScore = currentScore;
-        })
-    });
-    $(".scorecast_looser").each(function() {
-        $(this).children("table").children("tbody").children("tr").each(function(i) {
-            $(this).children("td").each(function() {
-				if ($(this).hasClass("center")) {
-					theBox = $(this);
-				}
-				if ($(this).hasClass("total")) {
-					currentScore = $(this).html()
-					numRank++;
-				}
-            })
-			if(currentScore != previousScore){
-				theBox.html(numRank)
-			} else {
-				theBox.html("-")
-			}
-			previousScore = currentScore;
-        })
-    });
+    var ranking = {current:1,previousScore:-1};
+    $(".scorecast_leader").each(function() {sectionRanking($(this), ranking)});
+    $(".scorecast_widget").each(function() {sectionRanking($(this), ranking)});
+    $(".scorecast_looser").each(function() {sectionRanking($(this), ranking)});
     var sizeofContent = parseInt($(window).height() - 360);
     $(".scorecast_widget").css("max-height", sizeofContent + "px")
 }
