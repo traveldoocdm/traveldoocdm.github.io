@@ -120,17 +120,16 @@ function sectionRanking(section, ranking){
 		});
 		
 		if(currentScore != ranking.previousScore){
-			scoreBox.html(ranking.current)
+			scoreBox.html(++ranking.current)
 		} else {
-			scoreBox.html("-")
+			scoreBox.html(ranking.current)
 		}
-		ranking.current++;
 		ranking.previousScore = currentScore;
 	});
 }
 
 function showRanking() {
-    var ranking = {current:1,previousScore:-1};
+    var ranking = {current:0,previousScore:-1};
     $(".scorecast_leader").each(function() {sectionRanking($(this), ranking)});
     $(".scorecast_widget").each(function() {sectionRanking($(this), ranking)});
     $(".scorecast_looser").each(function() {sectionRanking($(this), ranking)});
