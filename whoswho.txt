@@ -2,6 +2,7 @@ ABELMESKINE: Abdelkader Belmeskine
 AGATHA: Aghate Le Jeune ?
 AMIRALCOMCOM: Amir Darouechi
 AMITJET: Amit Jetha
+BABS007: Barbara Ceppitelli
 BASTIENBASILIEN: Bastien Hubert
 BERNARDODU92: Nouredine Belaidi
 BORISMC: Boris Maris
@@ -9,7 +10,7 @@ BQUATORZE: Brice Ramarohetra
 DISCOQUILLETTE: Myriam Mokrani
 EPILIPTIK:
 EL-DORADO:
-FRANCE123-0
+FRANCE123-0:
 FPTVLD: Frédéric Peng
 GABRIEL: Gabriel Rassial
 GORSEL: Gorsel Kutman
