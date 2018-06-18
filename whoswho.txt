@@ -1,15 +1,20 @@
+ABELMESKINE: Abdelkader Belmeskine
 AGATHA: Aghate Le Jeune ?
 AMIRALCOMCOM: Amir Darouechi
+AMITJET: Amit Jetha
 BASTIENBASILIEN: Bastien Hubert
 BERNARDODU92: Nouredine Belaidi
 BORISMC: Boris Maris
 BQUATORZE: Brice Ramarohetra
-EPILIPTIK:
 DISCOQUILLETTE: Myriam Mokrani
-EL-DORADO: 
+EPILIPTIK:
+EL-DORADO:
+FRANCE123-0
+FPTVLD: Frédéric Peng
 GABRIEL: Gabriel Rassial
 GORSEL: Gorsel Kutman
 GIROUND: Jean-Baptiste Thirault
+GUILLAUMEDELARUE: Guillaume Delarue
 HAL9000: Lucas Coquery
 JEFFPREVOT: Jean-François Prévot
 JIDEBE: 
@@ -17,12 +22,19 @@ JGUIBERT: Julien Guibert
 KALONJI: 
 KERIM: Kerim Ben Salem
 KISTOVER: Christophe Nigaud
+KISSY: Guillaume Le Biller
 LE_LUTTEUR_GEORGIEN: Pierre Semler
 MAHMOUD-REDA: Mahmoud Reda
+MARCMORENO: Marc Moreno
+MIDO_MIDO: 
 MPELLETIER45: Maxime Pelletier
 NICOLAS_DU_91: Nicolas Deblais
 PETANQUEFOREVER: Florian Chauvigné
 PIERLUIGI COLLINA: Philippe Zago
+PLAYERUNKNOWN: Arnaud Décolasse
+NICOLAS_DU_91: Ronan Delon
 SUPERBASIL: Thomas Basilien
 THEONETRUE: Jason Daury
+TRAVEL_K: Christelle Bordon
 VINCEDU69: Vincent Malley
+ZAZA_FROM_PARIS: Xavier De Koninck
