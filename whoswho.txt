@@ -27,7 +27,7 @@ KISSY: Guillaume Le Biller
 LE_LUTTEUR_GEORGIEN: Pierre Semler
 MAHMOUD-REDA: Mahmoud Reda
 MARCMORENO: Marc Moreno
-MIDO_MIDO: 
+MIDO_MIDO: Ahmed El Qaddar
 MPELLETIER45: Maxime Pelletier
 NICOLAS_DU_91: Nicolas Deblais
 PETANQUEFOREVER: Florian Chauvigné
