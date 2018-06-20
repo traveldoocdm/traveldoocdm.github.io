@@ -29,7 +29,7 @@ function copyTheSecondTable() {
                         labelUser = $(this).children("a").children("span").text().toLowerCase()
                     }
                 });
-                if (labelUser.toUpperCase() != "NONAME" && labelUser.toUpperCase() != "JASONTRAVELDOO" && labelUser.toUpperCase() != "RONANDEL") {
+                if (labelUser.toUpperCase() != "NONAME" && labelUser.toUpperCase() != "JASONTRAVELDOO" && labelUser.toUpperCase() != "RONANDEL" && labelUser.toUpperCase() != "BABS007" && labelUser.toUpperCase() != "AGATHA") {
                     htmlCode += "<tr>" + $(this).html() + "</tr>"
                 }
             });
@@ -137,7 +137,7 @@ function splitTableScore() {
                 htmlCodeTop += "<tr>" + $(this).html() + "</tr>";
                 $(this).remove()
             }
-            if (i > tableSize - 15) {
+            if (i > tableSize - 13) {
                 htmlCodeBottom += "<tr>" + $(this).html() + "</tr>";
                 $(this).remove()
             }
