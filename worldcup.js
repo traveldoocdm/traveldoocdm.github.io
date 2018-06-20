@@ -20,18 +20,27 @@ function copyTheSecondTable() {
     var htmlCode = "";
     var labelUser = "";
     var section = $(".scorecast_widget");
-    section.last().children("table").children("thead").remove();
-    section.last().children("table").children("tbody").children("tr").each(function() {
-        $(this).children("td").each(function() {
-            if ($(this).hasClass("user")) {
-                labelUser = $(this).children("a").children("span").text().toLowerCase()
-            }
-        });
-        if (labelUser.toUpperCase() != "NONAME") {
-            htmlCode += "<tr>" + $(this).html() + "</tr>"
+    section.each(function(i) {
+        if (i > 0) {
+            $(this).children("table").children("thead").remove();
+            $(this).children("table").children("tbody").children("tr").each(function() {
+                $(this).children("td").each(function() {
+                    if ($(this).hasClass("user")) {
+                        labelUser = $(this).children("a").children("span").text().toLowerCase()
+                    }
+                });
+                if (labelUser.toUpperCase() != "NONAME" && labelUser.toUpperCase() != "JASONTRAVELDOO" && labelUser.toUpperCase() != "RONANDEL") {
+                    htmlCode += "<tr>" + $(this).html() + "</tr>"
+                }
+            });
+            $(this).first().children("table").children("tbody").append(htmlCode)
         }
     });
-    section.last().remove();
+    section.each(function(i) {
+        if (i > 0) {
+            $(this).remove()
+        }
+    });
     section.first().children("table").children("tbody").append(htmlCode)
 }
 
@@ -124,11 +133,11 @@ function splitTableScore() {
     $(".scorecast_widget").each(function() {
         var tableSize = $(this).children("table").children("tbody").children("tr").size();
         $(this).children("table").children("tbody").children("tr").each(function(i) {
-            if (i < 7) {
+            if (i < 16) {
                 htmlCodeTop += "<tr>" + $(this).html() + "</tr>";
                 $(this).remove()
             }
-            if (i > 24) {
+            if (i > tableSize - 15) {
                 htmlCodeBottom += "<tr>" + $(this).html() + "</tr>";
                 $(this).remove()
             }
