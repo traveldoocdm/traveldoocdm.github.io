@@ -20,6 +20,7 @@ function copyTheSecondTable() {
     var htmlCode = "";
     var labelUser = "";
     var section = $(".scorecast_widget");
+    var toRemove = ["NONAME", "JASONTRAVELDOO", "RONANDEL", "BABS007", "AGATHA", "FRANCE123-0"]
     section.each(function(i) {
         if (i > 0) {
             $(this).children("table").children("thead").remove();
@@ -29,9 +30,9 @@ function copyTheSecondTable() {
                         labelUser = $(this).children("a").children("span").text().toLowerCase()
                     }
                 });
-                if (labelUser.toUpperCase() != "NONAME" && labelUser.toUpperCase() != "JASONTRAVELDOO" && labelUser.toUpperCase() != "RONANDEL" && labelUser.toUpperCase() != "BABS007" && labelUser.toUpperCase() != "AGATHA") {
-                    htmlCode += "<tr>" + $(this).html() + "</tr>"
-                }
+              if (!toRemove.includes(labelUser.toUpperCase())) {
+                htmlCode += "<tr>" + $(this).html() + "</tr>"
+              }
             });
             $(this).first().children("table").children("tbody").append(htmlCode)
         }
