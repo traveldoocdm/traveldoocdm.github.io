@@ -69,13 +69,6 @@ function upDateTheScore() {
             $(this).children("td").each(function() {
                 if ($(this).hasClass("user")) {
                     labelUser = $(this).children("a").children("span").text().toLowerCase()
-			 
-											
-													 
-																												
-									
-													 
-										   
                 }
                 if ($(this).hasClass("total")) {
                     scoreGame = parseInt($(this).text());
