@@ -47,8 +47,8 @@ function copyTheSecondTable() {
 
 function upDateTheScore() {
     var dateNow = $.now();
-    var dateUpgrade = new Date("Jul 16, 2018 04:00:00").getTime();
-    var dateRemoveAmazing = new Date("Jul 16, 2018 14:00:00").getTime();
+    var dateUpgrade = new Date("Jul 15, 2018 20:00:00").getTime();
+    var dateRemoveAmazing = new Date("Jul 16, 2018 12:00:00").getTime();
     var boolean = false;
     var topScore = 0;
     if (dateNow > dateUpgrade) {
