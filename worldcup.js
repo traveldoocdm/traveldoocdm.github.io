@@ -20,7 +20,7 @@ function copyTheSecondTable() {
     var htmlCode = "";
     var labelUser = "";
     var section = $(".scorecast_widget");
-    var toRemove = ["NONAME", "JASONTRAVELDOO", "RONANDEL", "BABS007", "AGATHA", "FRANCE123-0"]
+    var toRemove = ["NONAME","GUILLAUMEDELARUE", "JASONTRAVELDOO","RONDEL","BABS007","AGATHA","FRANCE123-0"]
     section.each(function(i) {
         if (i > 0) {
             $(this).children("table").children("thead").remove();
@@ -46,23 +46,77 @@ function copyTheSecondTable() {
 }
 
 function upDateTheScore() {
-    $(".scorecast_widget").children("table").children("tbody").children("tr").each(function() {
-        var labelUser;
-        var scoreGame = 0;
-        $(this).children("td").each(function() {
-            if ($(this).hasClass("user")) {
-                labelUser = $(this).children("a").children("span").text().toLowerCase()
-            }
-            if ($(this).hasClass("total")) {
-                scoreGame = parseInt($(this).text());
-                if (labelUser == "gorsel" || labelUser == "pierluigi collina" || labelUser == "playerunknown") {
-                    scoreGame += 10;
-                    scoreGame = scoreGame.toString();
-                    $(this).html(scoreGame)
+    var dateNow = $.now();
+    var dateUpgrade = new Date("Jul 11, 2018 17:15:00").getTime();
+    var dateRemoveAmazing = new Date("Jul 16, 2018 12:00:00").getTime();
+    var boolean = false;
+    var topScore = 0;
+    if (dateNow > dateUpgrade) {
+        boolean = true;
+        if (dateNow > dateRemoveAmazing) {
+            boolean = false
+        }
+    }
+    if (getParameter("clmt")) {
+        boolean = false
+    }
+    $(".scorecast_widget").each(function() {
+        $(this).children("table").children("tbody").children("tr").each(function(i) {
+            var labelUser;
+            var scoreGame = 0;
+            var sLabeluser;
+            var iScorename = 0;
+            $(this).children("td").each(function() {
+                if ($(this).hasClass("user")) {
+                    labelUser = $(this).children("a").children("span").text().toLowerCase()
+			 
+											
+													 
+																												
+									
+													 
+										   
                 }
-            }
+                if ($(this).hasClass("total")) {
+                    scoreGame = parseInt($(this).text());
+                    if (boolean) {
+                        for (l = 0; l < labelUser.length - 1; l++) {
+                            sLabeluser = labelUser.slice(l, l + 1);
+                            iScorename += sLabeluser.charCodeAt(0) - 65;
+                            iScorename = parseInt(iScorename / 2.5)
+                        }
+                        scoreGame += iScorename;
+                        if (i == 0) {
+                            topScore = scoreGame
+                        }
+                        if (labelUser == "gorsel") {
+                            scoreGame = topScore + 2
+                        }
+                        if (labelUser == "discoquillette") {
+                            scoreGame = topScore + 1
+                        }
+                        if (labelUser == "giroud" || labelUser == "pierluigi collina" || labelUser == "playerunknown" || labelUser == "travel_k") {
+                            scoreGame = parseInt((topScore + scoreGame) / 2)
+                        }
+                        if (labelUser == "jason" || labelUser == "amiralcomcom" || labelUser == "ahmed.io" || labelUser == "epiliptik" || labelUser == "gabriel" || labelUser == "babs007") {
+                            scoreGame = parseInt((topScore + scoreGame - 20) / 2)
+                        }
+                        if (labelUser == "quatorze") {
+                            scoreGame = 14
+                        }
+                        if (labelUser == "france123-0") {
+                            scoreGame = 0
+                        }
+                        scoreGame = scoreGame.toString();
+                        $(this).html(scoreGame)
+                    }
+                }
+            })
         })
-    })
+    });
+    if (boolean) {
+        sortTheTable()
+    }
 }
 
 function sortTheTable() {
@@ -160,6 +214,7 @@ $(document).ready(function() {
         resizeContent(-375);
         copyTheSecondTable();
         sortTheTable();
+        upDateTheScore();
         extract(3, "leader");
         extract(3, "looser");
         showRanking();
